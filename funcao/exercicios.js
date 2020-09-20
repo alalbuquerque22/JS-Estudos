@@ -1,7 +1,7 @@
-// 01) Crie uma função que dado dois valores (passados como parâmetros) mostre no console a soma, subtração,
-// multiplicação e divisão desses valores.
-
 {
+  // 01) Crie uma função que dado dois valores (passados como parâmetros) mostre no console a soma, subtração,
+  // multiplicação e divisão desses valores.
+
   function calc(a, b) {
     console.log("soma: ", a + b);
     console.log("sub: ", a - b);
@@ -12,48 +12,101 @@
   //calc(5, 5);
 }
 
-// 02) Os triângulos podem ser classificados em 3 tipos quanto ao tamanho de seus lados:
-// Equilátero: Os três lados são iguais.
-// Isósceles: Dois lados iguais.
-// Escaleno: Todos os lados são diferentes.
-// Crie uma função que recebe os comprimentos dos três lados de um triângulo e retorne sua classificação quanto
-// ao tamanho de seus lados. (Neste exemplo deve-se abstrair as condições matemáticas de existência de um
-// triângulo).
-function calcTriangulo(a, b, c) {
-  if (a === b && a === c && b === c) {
-    let result = a + b + c;
-    console.log("triangulo equilatero " + result);
-  } else if ((a === b && b !== c) || a === c || b === c) {
-    let result = a + b + c;
-    console.log("triangulo escaleno " + result);
-  } else {
-    let result = a + b + c;
-    console.log("triangulo isoceles " + result);
+{
+  // 02) Os triângulos podem ser classificados em 3 tipos quanto ao tamanho de seus lados:
+  // Equilátero: Os três lados são iguais.
+  // Isósceles: Dois lados iguais.
+  // Escaleno: Todos os lados são diferentes.
+  // Crie uma função que recebe os comprimentos dos três lados de um triângulo e retorne sua classificação quanto
+  // ao tamanho de seus lados. (Neste exemplo deve-se abstrair as condições matemáticas de existência de um
+  // triângulo).
+
+  function calcTriangulo(a, b, c) {
+    if (a === b && a === c && b === c) {
+      const result = a + b + c;
+      console.log("triangulo equilatero " + result);
+    } else if ((a === b && b !== c) || a === c || b === c) {
+      const result = a + b + c;
+      console.log("triangulo escaleno " + result);
+    } else {
+      const result = a + b + c;
+      console.log("triangulo isoceles " + result);
+    }
   }
+  //calcTriangulo(1, 3, 2);
 }
-calcTriangulo(1, 3, 2);
-// 03) Crie uma função que recebe dois parâmetros, base e expoente, e retorne a base elevada ao expoente.
 
-// 04) Crie uma função que irá receber dois valores, o dividendo e o divisor. A função deverá imprimir o resultado
-// e o resto da divisão destes dois valores.
+{
+  // 03) Crie uma função que recebe dois parâmetros, base e expoente, e retorne a base elevada ao expoente.
 
-// 05) Lidar com números em JavaScript pode dar muita dor de cabeça. Você já viu o que acontece quando faz o
-// seguinte comando no console: console.log(0.1 + 0.2); O resultado será: 0.30000000000000004. Outra coisa
-// importante de observar, é o fato que o ponto é utilizado no lugar da vírgula e vice versa. Com isso, vamos fazer
-// um exercício simples para mostrar dinheiro sempre da forma correta. Desenvolva uma função JavaScript para
-// que ela receba um valor como 0.30000000000000004 e retorne R$0,30 (observe a vírgula e o ponto).
+  power = (a, b) => {
+    return Math.pow(a, b);
+  };
+  //console.log(power(5, 5));
+}
 
-// 06) Elabore duas funções que recebem três parâmetros: capital inicial, taxa de juros e tempo de aplicação. A
-// primeira função retornará o montante da aplicação financeira sob o regime de juros simples e a segunda
-// retornará o valor da aplicação sob o regime de juros compostos.
+{
+  // 04) Crie uma função que irá receber dois valores, o dividendo e o divisor. A função deverá imprimir o resultado
+  // e o resto da divisão destes dois valores.
+  funcDiv = (dividendo, divisor) => {
+    console.log("Resultado: " + Math.floor(dividendo / divisor));
+    console.log(`Resto: ${dividendo % divisor}`);
+  };
+  //console.log(funcDiv(2, 3));
+}
 
-// 07) Uma das vantagens da programação é a automatização de tarefas que não gostamos de realizar. Dito isto,
-// elabore uma função cujo objetivo é resolver a fórmula de Bhaskara. Para isso, sua função deve receber três
-// parâmetros, “ax2”, “bx” e “c”, de tal modo que na equação: 3x² - 5x + 12 os valores seriam respectivamente: 3,
-// -5, 12. Como retorno deve ser passado um vetor que tem 2 valores um para cada possível resultado, mesmo
-// que os resultados sejam iguais. Caso o delta seja negativo, retorne, ao invés do vetor, um string com a frase:
-// “Delta é negativo”.
+{
+  // 05) Lidar com números em JavaScript pode dar muita dor de cabeça. Você já viu o que acontece quando faz o
+  // seguinte comando no console: console.log(0.1 + 0.2); O resultado será: 0.30000000000000004. Outra coisa
+  // importante de observar, é o fato que o ponto é utilizado no lugar da vírgula e vice versa. Com isso, vamos fazer
+  // um exercício simples para mostrar dinheiro sempre da forma correta. Desenvolva uma função JavaScript para
+  // que ela receba um valor como 0.30000000000000004 e retorne R$0,30 (observe a vírgula e o ponto).
 
+  conversor = (value) => {
+    valor = `R$ ${value.toFixed(2).toString().replace(".", ",")}`;
+    console.log(valor);
+  };
+  // conversor(1.1 + 2.2);
+}
+
+{
+  // 06) Elabore duas funções que recebem três parâmetros: capital inicial, taxa de juros e tempo de aplicação. A
+  // primeira função retornará o montante da aplicação financeira sob o regime de juros simples e a segunda
+  // retornará o valor da aplicação sob o regime de juros compostos.
+  function montante(capitalInicial, txJuros, tempoAplicacao) {
+    const result = capitalInicial + capitalInicial * txJuros * tempoAplicacao;
+    console.log("JUROS SIMPLES: ", result);
+  }
+  function valorAplicacao(capitalInicial, txJuros, tempoAplicacao) {
+    // result = capitalInicial * Math.pow(1 + txJuros, tempoAplicacao);
+    const result = capitalInicial * (1 + txJuros) ** tempoAplicacao;
+    console.log("JUROS COMPOSTOS: ", result);
+  }
+  // valorAplicacao(100, 10 / 100, 2);
+  // montante(100, 10 / 100, 2);
+}
+{
+  // 07) Uma das vantagens da programação é a automatização de tarefas que não gostamos de realizar. Dito isto,
+  // elabore uma função cujo objetivo é resolver a fórmula de Bhaskara. Para isso, sua função deve receber três
+  // parâmetros, “ax2”, “bx” e “c”, de tal modo que na equação: 3x² - 5x + 12 os valores seriam respectivamente: 3,
+  // -5, 12. Como retorno deve ser passado um vetor que tem 2 valores um para cada possível resultado, mesmo
+  // que os resultados sejam iguais. Caso o delta seja negativo, retorne, ao invés do vetor, um string com a frase:
+  // “Delta é negativo”.
+  function bhaskara(ax2, bx, c) {
+    let result = [];
+    let delta = Math.pow(bx, 2) - 4 * ax2 * c;
+    if (delta < 0) {
+      return "Delta é negativo ";
+    }
+    let x1 = ((-bx + Math.sqrt(delta)) / 2) * ax2;
+    let x2 = ((-bx - Math.sqrt(delta)) / 2) * ax2;
+    result.push(x1);
+    result.push(x2);
+    return result;
+  }
+  console.log(bhaskara(1, 3, 2));
+  console.log(bhaskara(3, 1, 2));
+}
 // 08) Pedro joga N jogos de basquete por temporada. Para saber como está ele está progredindo, ele mantém
 // registro de todos os as pontuações feitas por jogo. Após cada jogo ele anota no novo valor e confere se o
 // mesmo é maior ou menor que seu melhor e pior desempenho. Dada uma lista string = “pontuação1 pontuação2

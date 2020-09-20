@@ -1,13 +1,39 @@
 // 01) Crie uma função que dado dois valores (passados como parâmetros) mostre no console a soma, subtração,
 // multiplicação e divisão desses valores.
 
+{
+  function calc(a, b) {
+    console.log("soma: ", a + b);
+    console.log("sub: ", a - b);
+    console.log("mult: ", a * b);
+    console.log("divi: ", a / b);
+  }
+
+  //calc(5, 5);
+}
+
 // 02) Os triângulos podem ser classificados em 3 tipos quanto ao tamanho de seus lados:
-// Equilátero: Os três lados são iguais. Isósceles: Dois lados iguais. Escaleno: Todos os lados são diferentes.
+// Equilátero: Os três lados são iguais.
+// Isósceles: Dois lados iguais.
+// Escaleno: Todos os lados são diferentes.
 // Crie uma função que recebe os comprimentos dos três lados de um triângulo e retorne sua classificação quanto
 // ao tamanho de seus lados. (Neste exemplo deve-se abstrair as condições matemáticas de existência de um
 // triângulo).
-
+function calcTriangulo(a, b, c) {
+  if (a === b && a === c && b === c) {
+    let result = a + b + c;
+    console.log("triangulo equilatero " + result);
+  } else if ((a === b && b !== c) || a === c || b === c) {
+    let result = a + b + c;
+    console.log("triangulo escaleno " + result);
+  } else {
+    let result = a + b + c;
+    console.log("triangulo isoceles " + result);
+  }
+}
+calcTriangulo(1, 3, 2);
 // 03) Crie uma função que recebe dois parâmetros, base e expoente, e retorne a base elevada ao expoente.
+
 // 04) Crie uma função que irá receber dois valores, o dividendo e o divisor. A função deverá imprimir o resultado
 // e o resto da divisão destes dois valores.
 
@@ -28,7 +54,6 @@
 // que os resultados sejam iguais. Caso o delta seja negativo, retorne, ao invés do vetor, um string com a frase:
 // “Delta é negativo”.
 
-
 // 08) Pedro joga N jogos de basquete por temporada. Para saber como está ele está progredindo, ele mantém
 // registro de todos os as pontuações feitas por jogo. Após cada jogo ele anota no novo valor e confere se o
 // mesmo é maior ou menor que seu melhor e pior desempenho. Dada uma lista string = “pontuação1 pontuação2
@@ -41,7 +66,6 @@
 // Retorno: [3, 7] (Significa que ele bateu três vezes seu recorde de melhor pontuação e a pior pontuação
 // aconteceu no sétimo jogo.)
 
-
 // 09) Construa uma função para um sistema de notas de uma instituição que possui a seguinte política de
 // classificação: Todo aluno recebe uma nota de 0 a 100. Alunos com nota abaixo de 40 são reprovados. As notas
 // possuem a seguinte regra de arredondamento: Se a diferença entre a nota e o próximo múltiplo de 5 for menor
@@ -51,10 +75,8 @@
 // seja, que evite a reprovação do aluno. No caso de a nota ser 38, o arredondamento é possível pois atingirá 40
 // e o aluno será aprovado.
 
-
 // 10) Crie uma função que verifica se um número inteiro passado como parêmetro é divisível por 3 e retorne true
 // ou false.
-
 
 // 11) As regras para o cálculo dos anos bissextos são as seguintes:
 // De 4 em 4 anos é ano bissexto;
@@ -64,25 +86,21 @@
 // Partindo daí elabore uma função que recebe um ano e calcula se ele é ano bissexto, imprimindo no console a
 // mensagem e retornando true ou false.
 
-
 // 12) Faça um algoritmo que calcule o fatorial de um número.
 
 // 13) Crie um programa que exibe se um dia é dia útil, fim de semana ou dia inválido dado o número referente ao
 // dia. Considere que domingo é o dia 1 e sábado é o dia 7. Utilize a estrutura Switch.
-
 
 // 14) Crie uma estrutura condicional switch que receba uma string com o nome de uma fruta e que possua três
 // casos: Caso maçã, retorne no console: “Não vendemos esta fruta aqui”. Caso kiwi, retorne: “Estamos com
 // escassez de kiwis”. Caso melancia, retorne: “Aqui está, são 3 reais o quilo”. Teste com estas três opções .Crie
 // também um default, que retornará uma mensagem de erro no console.
 
-
 // 15) Um homem decidiu ir à uma revenda comprar um carro. Ele deseja comprar um carro hatch, e a revenda
 // possui, além de carros hatch, sedans, motocicletas e caminhonetes. Utilizando uma estrutura switch, caso o
 // comprador queira o hatch, retorne: “Compra efetuada com sucesso”. Nas outras opções, retorne: “Tem certeza
 // que não prefere este modelo?”. Caso seja especificado um modelo que não está disponível, retorne no console:
 // “Não trabalhamos com este tipo de automóvel aqui”.
-
 
 // 16) Utilizando a estrutura do Switch faça um programa que simule uma calculadora básicaO programa recebe
 // como parâmetros dois valores numéricos e uma string referente à operação e a realize com os valores
@@ -97,10 +115,8 @@
 // Faça uma função que leia o plano de trabalho e o salário atual de um funcionário e calcula e imprime o seu
 // novo salário. Use a estrutura switch e faça um caso default que indique que o plano é inválido.
 
-
 // 18) Faça um programa que leia um número entre 0 e 10, e escreva este número por extenso. Use o comando
 // switch. Crie um case default que escreva ‘Número fora do intervalo.’
-
 
 // 19) O cardápio de uma lanchonete é o seguinte:
 // Código Descrição do Produto Preço
@@ -114,31 +130,26 @@
 // a ser pago por aquele lanche. Considere que a cada execução somente será calculado um item. Use o
 // comando switch. Crie um caso default para produto não existente.
 
-
 // 20) Crie um programa para informar quais e quantas notas são necessárias para entregar o mínimo de cédulas
 // para um determinado valor informado pelo usuário considerando notas de R$ 100, R$ 50, R$ 10 e R$ 5 e R$ 1.
 // Seu programa deve mostrar apenas as notas utilizadas. Por exemplo, ao solicitar R$18, o programa deve
 // informar apenas a seguinte informação (note que não foram exibidas informações sobre as demais cédulas): 1
 // nota(s) de R$ 10. 1 nota(s) de R$ 5. 3 nota(s) de R$ 1.
 
-
 // 21) Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade do conveniado
 // considerando que todos pagam R$ 100 mais um adicional conforme a seguinte tabela: 1) crianças com menos
 // de 10 anos pagam R$80; 2) conveniados com idade entre 10 e 30 anos pagam R$50; 3) conveniados com
 // idade acima de 30 e até 60 anos pagam R$ 95; e 4) conveniados acima de 60 anos pagam R$130
-
 
 // 22) Criar uma função para calcular o valor a ser pago de anuidade de uma associação. A função recebe como
 // parâmetro um inteiro que representa o mês (1 - janeiro, 2 - fevereiro…) que foi paga e o valor da anuidade. A
 // anuidade deve ser paga no mês de janeiro. Por mês, é cobrado 5% de juros (sob o regime de juros
 // compostos). O retorno deve ser o valor a ser pago para o respectivo mês escolhido.
 
-
 // 23) Escreva um algoritmo que leia o código de um aluno e suas três notas. Calcule a média ponderada do
 // aluno, considerando que o peso para a maior nota seja 4 e para as duas restantes, 3. Mostre o código do
 // aluno, suas três notas, a média calculada e uma mensagem "APROVADO" se a média for maior ou igual a 5 e
 // "REPROVADO" se a média for menor que 5. Repita a operação até que o código lido seja negativo.
-
 
 // 24) Crie um programa que imprima 11 vezes a frase " Hello World!" utilizando uma estrutura de repetição while.
 
@@ -156,16 +167,12 @@
 // deste vetor estão no intervalo [10,20] (repare que o intervalo é fechado, ou seja, inclui o 10 e o 20) e quantos
 // deles estão fora do intervalo, escrevendo estas informações.
 
-
 // 30) Escreva um algoritmo que percorre um vetor de inteiros e defina o maior e menor valor dentro do vetor.
 
 /*/31) Escrever um algoritmo que percorre um vetor de inteiros, conta quantos números negativos há nesse vetor
 e imprime a quantidade no console./*/
 
-
 /*/32) Construir um algoritmo que calcule a média aritmética dos valores de um vetor de inteiros./*/
-
-
 
 /*/33) Crie três vetores, chamados vetorInteiro, vetorString e vetorDouble. Cada um destes vetores deverá conter
 quatro valores, sendo o primeiro com valores inteiros, o segundo com strings e o terceiro com valores decimais.
@@ -174,7 +181,6 @@ mostre o resultado no console. Todos os elementos do vetor resultado deverão ap
 
 /*/34) Construa uma função que receberá duas Strings de tamanhos variados e que retornará True ou False caso
 todos os caracteres (independentemente de ser maiúsculo ou minúsculo) estejam contidos em ambas palavras./*/
-
 
 /*/35) Crie dois vetores chamados vetorPilha e vetorAdiciona. Inicialmente, o vetorPilha conterá cinco elementos
 inteiros: [1, 2, 3, 4, 5]. Você deverá adicionar os valores contidos no vetorAdiciona [6, 7, 8, 9, 10] ao vetor pilha
@@ -195,11 +201,9 @@ bem como a soma dos elementos./*/
 ímpares que estão entre esses valores. Por padrão os valores devem ser 0 para início e 100 para fim. Atente
 para corrigir a ordem dos parâmetros caso a função receba o valor maior antes do menor.*/
 
-
 /*39) Crie uma função que receba dois vetores de igual tamanho e troque seus elementos de modo que o
 primeiro elemento do vetorA passe a ser o primeiro elemento do vetorB e vice versa e assim sucessivamente.
 Faça a troca sem utilizar uma variável auxiliar.*/
-
 
 /*40) Faça uma função que receba como parâmetro um vetor de notas e mostre os conceitos de cada uma de
 modo que de 0,0 a 4,9 seja atribuído o conceito D, de 5,0 a 6,9 seja atribuído o conceito C, de 7,0 a 8,9 o

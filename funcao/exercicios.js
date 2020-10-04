@@ -104,7 +104,7 @@
     result.push(x2);
     return result;
   }
-  console.log(bhaskara(1, 3, 2));
+  //console.log(bhaskara(1, 3, 2));
   console.log(bhaskara(3, 1, 2));
 }
 // 08) Pedro joga N jogos de basquete por temporada. Para saber como está ele está progredindo, ele mantém
